@@ -5,6 +5,6 @@ class Question(models.Model):
     pub_date = models.DateTimeField('date published')
 
 class Choice(models.Model):
-    poll = models.ForeignKey(Question)
-    choice = models.CharField(max_length=200)
-    votes = model.IntegerField(default=0)
+    question = models.ForeignKey(Question)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
