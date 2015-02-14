@@ -1,10 +1,10 @@
 from django.db import models
 
-class Poll(models.Model):
-    question = models.CharField(max_length=200)
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
 
 class Choice(models.Model):
-    poll = models.ForeignKey(Poll)
+    poll = models.ForeignKey(Question)
     choice = models.CharField(max_length=200)
-    votes = model.IntegerField()
+    votes = model.IntegerField(default=0)
